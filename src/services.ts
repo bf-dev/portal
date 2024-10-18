@@ -8,7 +8,11 @@ export const serviceList: Service[] = [
 		url: "https://devbf.com",
 	},
 	{
-		title: "Blog",
+		title: "Docs",
 		url: "https://dev.devbf.com",
+	},
+	{
+		title: "Calendars",
+		url: "https://lolesports.calendar.devbf.com",
 	},
 ];
