@@ -1,0 +1,150 @@
+:root {
+	--unit: 1rem;
+	--unit-2: 2rem;
+	--font: -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+		"Helvetica Neue", sans-serif;
+	--color-body: #1a1a1a;
+	--color-body-light: #626a6e;
+	--color-body-inverted: #fff;
+	--color-primary: #005ea5;
+	--color-primary-hover: #003078;
+	--color-line: #b1b4b6;
+	--color-access: #fd0;
+}
+
+body {
+	font-family: var(--font);
+	line-height: 1.4;
+	color: var(--color-body);
+	background: var(--color-body-inverted);
+	margin: 0;
+	padding: var(--unit-2);
+}
+
+main {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 2.25rem;
+	margin-bottom: var(--unit);
+}
+
+p {
+	font-size: 1.1875rem;
+	color: var(--color-body-light);
+	margin-bottom: var(--unit-2);
+}
+
+label {
+	display: block;
+	margin-bottom: calc(var(--unit) / 2);
+	font-size: 1.1875rem;
+}
+
+input[type="text"] {
+	font-size: 1.5rem;
+	font-family: var(--font);
+	width: 100%;
+	padding: 10px;
+	border: 2px solid var(--color-body);
+	margin-bottom: var(--unit);
+	box-sizing: border-box;
+}
+
+button {
+	font-size: 1.1875rem;
+	font-family: var(--font);
+	background-color: var(--color-primary);
+	border: 2px solid transparent;
+	color: var(--color-body-inverted);
+	cursor: pointer;
+	padding: 10px 20px;
+	margin-bottom: var(--unit-2);
+}
+
+button:hover {
+	background-color: var(--color-primary-hover);
+}
+
+input:focus,
+button:focus,
+a:focus {
+	outline: 3px solid var(--color-access);
+	outline-offset: 0;
+}
+
+.or-divider {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: var(--unit-2) 0;
+	color: var(--color-body-light);
+}
+
+.or-divider::before,
+.or-divider::after {
+	content: "";
+	flex: 1;
+	border-bottom: 1px solid var(--color-line);
+}
+
+.or-divider::before {
+	margin-right: 0.5em;
+}
+
+.or-divider::after {
+	margin-left: 0.5em;
+}
+
+.service-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.service-list li {
+	margin-bottom: var(--unit);
+}
+
+.service-list a {
+	color: var(--color-primary);
+	text-decoration: none;
+	font-size: 1.1875rem;
+}
+
+.service-list a:hover {
+	text-decoration: underline;
+}
+
+header {
+	display: flex;
+	align-items: center;
+}
+
+header img {
+	width: 24px;
+}
+
+header h2 {
+	margin: 0 0 0 10px;
+	font-size: 1.5rem;
+}
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+	font-size: 1.1875rem;
+}
+a:hover {
+	color: var(--color-primary-hover);
+}
+
+#logo {
+	display: inline-block;
+	transition: transform 0.5s ease-in-out;
+}
+
+#logo:hover {
+	transform: rotate(360deg);
+}
