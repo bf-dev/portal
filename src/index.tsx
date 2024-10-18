@@ -238,7 +238,7 @@ app.get("/:key", async (c) => {
 });
 
 // 404 Not Found Handler
-app.all("*", (c) => {
+app.notFound((c) => {
   return c.render(
     <main>
       <h1>404 - Page Not Found</h1>
