@@ -28,7 +28,7 @@ export const renderer = jsxRenderer(({ children }) => {
 							alt="DevBF Logo"
 							id="logo"
 						/>
-						<h2>DevBF</h2>
+						<h2>Portal</h2>
 					</header>
 					{children}
 				</main>

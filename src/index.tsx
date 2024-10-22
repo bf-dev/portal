@@ -229,12 +229,27 @@ app.post("/api/shorten", async (c) => {
 app.get("/:key", async (c) => {
   const key = c.req.param("key");
   const url = await c.env.KV.get(key);
+  
 
   if (url === null) {
     return c.notFound();
   }
-
-  return c.redirect(url);
+  
+  const urlObject = new URL(url);
+  //add code parameter
+  urlObject.searchParams.set("accessCode", key);
+  //show warning page if url is not *.devbf.com and referer is devbf.com
+  if (!urlObject.hostname.endsWith(".devbf.com") && c.req.header("Referer")?.includes("devbf.com")) {
+    return c.render(
+      <main>
+        <h1>Warning</h1>
+        <p>You are about to be redirected to a URL that is not a DevBF service.</p>
+        <a href={urlObject.toString()}>Continue</a>
+      </main>
+    );
+  }else{
+    return c.redirect(urlObject.toString());
+  }
 });
 
 // 404 Not Found Handler
